@@ -1,0 +1,18 @@
+#pagina_login{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1000px;
+}
+#pagina_cadastro{
+    display: none;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+}
+#corpo_login{
+
+}
