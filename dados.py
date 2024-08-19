@@ -71,6 +71,3 @@ unido = {
     "telefones": centro_oeste["telefones"] + nordeste["telefones"] + norte["telefones"] + sul["telefones"] + sudeste["telefones"],
     "tags":centro_oeste["tags"] + nordeste["tags"] + norte["tags"] + sul["tags"] + sudeste["tags"],
 }
-
-for i in unido["nomes"]:
-    print(i)

@@ -196,12 +196,16 @@
         <h3>assistencias Técnicas</h3>
         
           <div>
-            <p style="margin-bottom: -8px">Selecione Sua Região</p>
-            <button class="botao_regiao" id="botao_centro_oeste" value="centro_oeste" onclick="botao_centro_oeste_click()">Centro Oeste</button>
-            <button class="botao_regiao" id="botao_sudeste" value="sudeste" onclick="botao_sudeste_click()">Sudeste</button>
-            <button class="botao_regiao" id="botao_norte" value="norte" onclick="botao_norte_click()">Norte</button>
-            <button class="botao_regiao" id="botao_nordeste" value="nordeste" onclick="botao_nordeste_click()">Nordeste</button>
-            <button class="botao_regiao" id="botao_sul" value="sul" onclick="botao_sul_click()">Sul</button>
+        
+            <p>Selecione Sua Região</p>
+           
+            <div id="texto_botoes_assistencias">
+              <button class="botao_regiao" id="botao_centro_oeste" value="centro_oeste" onclick="botao_centro_oeste_click()">Centro Oeste</button>
+              <button class="botao_regiao" id="botao_sudeste" value="sudeste" onclick="botao_sudeste_click()">Sudeste</button>
+              <button class="botao_regiao" id="botao_norte" value="norte" onclick="botao_norte_click()">Norte</button>
+              <button class="botao_regiao" id="botao_nordeste" value="nordeste" onclick="botao_nordeste_click()">Nordeste</button>
+              <button class="botao_regiao" id="botao_sul" value="sul" onclick="botao_sul_click()">Sul</button>
+            </div>
           </div>
 
 
@@ -211,7 +215,10 @@
       </div>
 
       <div id="fundo-carrosel">
-          <div id="carrosel_todos" class="carousel slide">
+        <div style="display: flex; justify-content: center;">
+        <img id="img_fundo_carrosel" src="../static/imagens/background_assistencias.jpg">
+        </div>  
+        <div id="carrosel_todos" class="carousel slide">
           <div class="carousel-inner">
             <!-- O codigo em python para adicionar os itens começara possivelmente a partir daqui -->
             <div id="todos">
@@ -508,7 +515,7 @@
     
     
   </script>
-  
+
   <script>
     var div_todos = document.getElementById("carrosel_todos");
     var div_centro_oeste = document.getElementById("carrosel_centro_oeste");
@@ -611,6 +618,7 @@
     
 
   </script>
+
   <!-- Efeito de Animação com scroll  -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -681,6 +689,7 @@
     });
 
   </script>
+
   <!-- Script das notas musicais da area sobre -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -702,7 +711,6 @@
       });
     });
   </script>
-  <!---->
   <script>
     var logado = false;
     const imagem_block = document.querySelector('.img-block');
