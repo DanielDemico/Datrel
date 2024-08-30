@@ -101,5 +101,5 @@ def sair():
     global logado
     logado = False
     return redirect("/")
-if __name__ in "__main__":
-    app.run(debug=True)
+
+app.run()

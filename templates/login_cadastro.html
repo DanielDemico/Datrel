@@ -48,16 +48,16 @@
   <section>
     <div id='pagina_login'>
         <h1>Pagina de Login </h1>
-        <div id="corpo_login">
-            <form type="submit" method="POST" action="{{url_for('logar')}}">
-                <input type="email" name="email">
-                <label for="email">E-Mail</label>
+        <div>
+            <form class="forms-login" type="submit" method="POST" action="{{url_for('logar')}}">
+                <input type="email" name="email" placeholder="E-mail">
+               
             
 
-                <input type='password' name="senha">
-                <label for="senha">Senha</label>
+                <input type='password' name="senha" placeholder="Senha">
+             
 
-                <input type="submit" value="Logar">
+                <input class="btn-logar"type="submit" value="Logar">
             </form>
 
         </div> 
@@ -65,28 +65,29 @@
     <div id="pagina_cadastro" class="some">
         <h1>Pagina de cadastro </h2>
             <div>
-                <form type="submit" method="POST" action="{{url_for('cadastrar')}}">
-                  <input type="hidden" name="value" value="1">
-                    <input type="text" name="nome">
-                    <label for="nome">Nome</label>
+                <form class="forms-cadastrar" type="submit" method="POST" action="{{url_for('cadastrar')}}">
+                  
+                   <input type="hidden" name="value" value="1">
+                  
+                  <div>
+                     <input type="text" name="nome" placeholder="Nome">
+                     <input type="number" name="CEP" placeholder="CEP">
+                    </div>
 
-                    <input type="number" name="CEP">
-                    <label for="CEP">CEP</label>
-    
-                    <input type="number" name="telefone">
-                    <label for="telefone">Telefone</label>
+                    <div>
+                      <input type="number" name="telefone" placeholder="Telefone">
+                      <input type="email" name="email" placeholder="E-mail">
+                    </div>
                     
-                    <input type="email" name="email">
-                    <label for="email">E-Mail</label>
-    
-                    <input type='password' name="senha">
-                    <label for="senha">Senha</label>
+                    <div>
+                      <input type='password' name="senha" placeholder="Senha">
+                      <input type='password' name="confirmar_senha" placeholder="Confirmar Senha">
+                    </div>
 
-                    <input type='password' name="confirmar_senha">
-                    <label for="confirmar_senha">confirmar a senha</label>
-
-                    <input type="submit" value="Cadastrar" name="cadastrar">
-                </form>
+                    
+                      <input class="btn-cadastrar" type="submit" value="Cadastrar" name="cadastrar">
+                    
+                  </form>
             </div>
     </div>
     
@@ -96,6 +97,62 @@
     <!--Div de cadastro-->
  
   </section>
+    <footer>
+    <div>
+    <div class="div_footer">
+    <div>
+      <img class="logo_footer" src="../static/imagens/logo-branco.svg" alt="logo Branco">
+    </div>
+    <div>
+        <ul class="lista-footer">
+          <li class="item-footer">
+            <a class="link-footer" href="#">Sobre</a>
+          </li>
+          <li class="item-footer">
+            <a class="link-footer" href="#">Produtos</a>
+          </li>
+          <li class="item-footer">
+            <a class="link-footer" href="#">Assistências</a>
+          </li>
+          <li class="item-footer">
+            <a class="link-footer" href="#">Orçamento</a>
+          </li>
+        </ul>
+    </div>
+      <div>
+          <ul class="lista-footer">
+            <li class="li-icone-footer">
+              <a class="link-footer" href="#">
+                <i class="fa-brands fa-instagram branco"></i>
+              </a>
+            </li>
+            <li>
+              <a class="link-footer" href="#">
+                <i class="fa-brands fa-facebook branco"></i>
+              </a>
+            </li>
+            <li>
+              <a class="link-footer" href="#">
+                <i class="fa-brands fa-whatsapp branco"></i>
+              </a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      
+          
+          <hr class="linha_footer"></hr>
+          
+        
+          <div class="baixo-footer">
+            <p>&#169; Datrel Periféricos. Todos os direitos Reservados
+            
+            <p>Protótipo para Inovaskill 2024 </p>
+          </div>
+  </footer>
+
+
+  <script src="https://kit.fontawesome.com/7cbeed6b47.js" crossorigin="anonymous"></script>
   <script>
     function change(){
         var checkbox = document.querySelector('[name="login"]');
@@ -113,6 +170,16 @@
     }
     }
     
+    const icons = document.querySelectorAll(".fa-brands")
+    
+    icons.forEach(icon => {
+    icon.addEventListener('mouseover',function(){
+      icon.classList.add("fa-bounce");
+    });
+    icon.addEventListener('mouseout',function(){
+      icon.classList.remove("fa-bounce");
+    });
+  }); 
   </script>
 </body>
 

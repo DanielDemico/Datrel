@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style rel="stylesheet" type="text/css">
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #111;
+    color: #fff;
+}
+
+#about {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sound-wave-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.sound-wave {
+    width: 10px;
+    height: 100px;
+    background: linear-gradient(180deg, #fff, #0af);
+    animation: waveAnimation 2s infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#wave1 { animation-delay: 0s; }
+#wave2 { animation-delay: 0.4s; }
+#wave3 { animation-delay: 0.8s; }
+#wave4 { animation-delay: 1.2s; }
+#wave5 { animation-delay: 1.6s; }
+
+@keyframes waveAnimation {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(2); }
+}
+
+.sound-wave:hover {
+    transform: scaleY(3);
+    box-shadow: 0 0 10px #0af, 0 0 20px #0af, 0 0 30px #0af;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(0,212,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.15s, opacity 0.15s;
+}
+
+body.light-active::before {
+    transform: scale(2);
+    opacity: 1;
+}
+
+    </style>
+</head>
+<body>
+    <section id="about">
+        <div class="sound-wave-container">
+            <div class="sound-wave" id="wave1"></div>
+            <div class="sound-wave" id="wave2"></div>
+            <div class="sound-wave" id="wave3"></div>
+            <div class="sound-wave" id="wave4"></div>
+            <div class="sound-wave" id="wave5"></div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+    const light = document.querySelector('body::before');
+    const { clientX: x, clientY: y } = e;
+    light.style.left = `${x}px`;
+    light.style.top = `${y}px`;
+});
+
+document.addEventListener('mouseenter', () => {
+    document.body.classList.add('light-active');
+});
+
+document.addEventListener('mouseleave', () => {
+    document.body.classList.remove('light-active');
+});
+
+
+    </script>
+</body>
+</html>

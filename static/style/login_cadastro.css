@@ -1,18 +1,63 @@
-#pagina_login{
-    background-color: whitesmoke;
+section{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-color: darkslateblue;
+    height: 600px;
 
+}
+#pagina_login{
+    background: linear-gradient(90deg,blue, darkblue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
     width: 1000px;
+}
+#pagina_login h1{
+    color:white;
+}
+.forms-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.forms-login input{
+    margin: 10px;
+    align-self: start;
+    border-radius: 5px;
+    border: none;
+}
+.forms-login input:focus{
+    border: none;
+    outline-color: blue;
+
+}
+.btn-logar{
+    width: 100%;
+    margin-top: 100px;
+    border: none;
 }
 #pagina_cadastro{
     display: none;
-    background-color: whitesmoke;
+    flex-direction: column  ;
+    background: linear-gradient(90deg,blue, darkblue);
     justify-content: center;
     align-items: center;
+    height:400px;
     width: 1000px;
 }
-#corpo_login{
+.forms-cadastrar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.btn-cadastrar{
+    width: 100%;
+    margin-top: 100px;
 }

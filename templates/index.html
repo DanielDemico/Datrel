@@ -231,9 +231,10 @@
                           {{unido.tags[item]|safe}}
                         </div>
                         <div class="card-text">
-                          <p>{{ unido.nomes[item] }}</p>
-                          <p>{{ unido.cidades[item] }}</p>
-                          <p>{{ unido.telefones[item] }}</p>
+                          <p class="card-title">{{ unido.nomes[item] }}</p>
+                          <div class="card-line"></div>
+                          <p class="card-p"><i class="fa-solid fa-map icone-card"></i>{{ unido.cidades[item] }}</p>
+                          <p class="card-p"><i class="fa-solid fa-phone icone-card"></i>{{ unido.telefones[item] }}</p>
                         </div>
                       </div>
                     </div>
@@ -489,6 +490,61 @@
       </div>
     <!-- Final Do Chat-->
   </section>
+  <footer>
+    <div>
+    <div class="div_footer">
+    <div>
+      <img class="logo_footer" src="../static/imagens/logo-branco.svg" alt="logo Branco">
+    </div>
+    <div>
+        <ul class="lista-footer">
+          <li class="item-footer">
+            <a class="link-footer" href="#">Sobre</a>
+          </li>
+          <li class="item-footer">
+            <a class="link-footer" href="#">Produtos</a>
+          </li>
+          <li class="item-footer">
+            <a class="link-footer" href="#">Assistências</a>
+          </li>
+          <li class="item-footer">
+            <a class="link-footer" href="#">Orçamento</a>
+          </li>
+        </ul>
+    </div>
+      <div>
+          <ul class="lista-footer">
+            <li class="li-icone-footer">
+              <a class="link-footer" href="#">
+                <i id="icone-footer" class="fa-brands fa-instagram branco"></i>
+              </a>
+            </li>
+            <li>
+              <a class="link-footer" href="#">
+                <i id="icone-footer" class="fa-brands fa-facebook branco"></i>
+              </a>
+            </li>
+            <li>
+              <a class="link-footer" href="#">
+                <i id="icone-footer" class="fa-brands fa-whatsapp branco"></i>
+              </a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      
+          
+          <hr class="linha_footer"></hr>
+          
+        
+          <div class="baixo-footer">
+            <p>&#169; Datrel Periféricos. Todos os direitos Reservados
+            
+            <p>Protótipo para Inovaskill 2024 </p>
+          </div>
+          
+        
+  </footer>
 
   
 
@@ -512,6 +568,18 @@
       const div_mensagem = document.getElementById('mensagem_login');
       div_mensagem.classList.add('some');
     }
+    
+    
+    const icons = document.querySelectorAll(".fa-brands")
+    
+    icons.forEach(icon => {
+    icon.addEventListener('mouseover',function(){
+      icon.classList.add("fa-bounce");
+    });
+    icon.addEventListener('mouseout',function(){
+      icon.classList.remove("fa-bounce");
+    });
+  });
     
     
   </script>

@@ -5,10 +5,12 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: black;
+    
 }
 
 body{
     overflow-x: hidden;
+    background-color: whitesmoke;
 }
 
 /* Header */
@@ -86,6 +88,17 @@ body{
     flex-direction: column;
     margin-top: 20px;
 }
+.nav-link{
+    padding: 2px 20px;
+
+
+}
+.nav-link:hover{
+    background-color: #ececec;
+    color: blue;
+  
+    
+}
 #linha{
     align-self: center;
     width: 600px;
@@ -148,7 +161,7 @@ body{
     height: 600px;
     width: 100%; 
     position: absolute;
-    filter: blur(5px);
+    
     transform: scale(110%);
     z-index: 0;
 
@@ -162,11 +175,13 @@ body{
     height: 100px;
     margin-bottom: -14px;
     background-color: blue;
+    color: white;
     z-index: 2;
 }
 .botao_regiao:hover{
     width: 100%;
     background-color: darkblue;
+    color: white
 }
 
 .clicado{
@@ -203,7 +218,7 @@ body{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     z-index: 0;
-    background-color: blue;
+    background-color: darkblue;
     
 }
 iframe{
@@ -215,11 +230,33 @@ iframe{
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
     text-align: start;    
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255);
+}
+.card-line{
+    background: linear-gradient(95deg,darkblue,darkblue);
+    border-radius: 15px;
+    height: 4px;
+    width: 80%;
+    margin: 0px;
+    padding: 0px;
+}
+.card-title{
+    font-size: 1.5em;
+    padding-top: 20px;
+    padding-left: 10px;
+
+}
+.card-p{
+    font-size: 1.3em;
+    padding: 5px;   
+    margin: 0px 0px;
+}
+.icone-card{
+    color: darkblue;
+    padding: 10px;
 }
 
 /*COZE */
@@ -256,4 +293,71 @@ iframe{
 }
 .concerta{
     display: block;
+}
+
+/*FOoter*/
+footer{
+    background-color: black;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+}
+.div_footer{
+    padding-top: 00px; 
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.logo_footer{
+    height: 100px;
+    width: 200px;
+}
+.lista-footer{
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    
+    
+}
+.item-footer{
+    margin: 10px;
+}
+.link-footer{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+.link-footer:hover{
+    color: blue;
+}
+.linha_footer{
+    border: 1px solid white;
+}
+
+.branco{
+    margin: 0px 0px 0px 20px;
+    font-size: 30px;
+    color:white;
+    transition: 0.2s;
+    
+}
+.branco:hover{
+    color: darkblue;
+}
+.baixo-footer{
+    display: flex;
+    justify-content: space-between;
+   
+}
+.baixo-footer p{
+    color:white;
 }
