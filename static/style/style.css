@@ -2,7 +2,7 @@
 * {
     padding: 0px;
     margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 20px;
     color: black;
     
@@ -31,7 +31,7 @@ body{
 #sobre{
 
     width: 100%;
-    height: 700px;
+    height: 640px;
     background: linear-gradient(90deg, black, darkblue);
     display: flex;
     flex-direction: column;
@@ -63,7 +63,13 @@ body{
     }
     
 }
-.img{height: 30px;}
+.img{
+    height: 30px;
+    margin-bottom: 20px;
+}
+.icon-flutuante{
+    z-index: 1;
+}
 
 #sobre-corpo{
     
@@ -71,15 +77,21 @@ body{
     position: absolute;
     width: 1080px;
     align-self: center;
+    z-index: 2;
 }
 #sobre-corpo p{
     padding: 20px;
     color:white;
-    text-align: justify;
-    text-shadow:  0px 5px 2px black;
+    text-align: center;
+    text-shadow:
+    1px 1px 2px black,
+    0 0 1em black,
+    0 0 0.5em black;
+    z-index:2;
 }
-#sobre-corpo img{
+#sobre-corpo svg{
     margin-bottom: 40px;
+    z-index: -2;
 }
 
 /*Produtos*/
@@ -114,11 +126,12 @@ body{
     letter-spacing: 5px;
     color: blue;
     font-size:20px;
-    margin-bottom: -8px;
+    margin-bottom: -4px;
 }
 .img-produtos{
     height: 300px;
     transition: all 0.5s ease;
+    border-radius: 12px;
     
 }
 .img-produtos:hover{
@@ -136,20 +149,32 @@ body{
 .div-produtos{
     height: 300px;
     width: 300px;
-    background-color: blue;
-    margin: 20px 10px;
+    
+    margin: 30px 20px;
 }
 
 /*Assistencias*/ 
+
 #assistencias{
-    margin-top: 40px;
+    
+    background-color: gainsboro;
+
 }
-#texto-assistencia{
-    margin-bottom: 10px;
+#assistencias hr{
+    margin-bottom: 40px;
 }
+.linha_assistencia{
+    align-self: center;
+    width: 80%;
+    height: 14px;
+    background: linear-gradient(05deg, blue, darkblue );
+    border-radius: 15px;
+    margin-bottom: -10px;
+}
+
 #fundo-carrosel{
-    background-color: darkblue;
-    height: 600px;
+    /* background-color: gainsboro; */
+    height: 500px;
     width: 100%;    
     z-index: 1;
 
@@ -158,38 +183,119 @@ body{
     
 }
 #img_fundo_carrosel{
-    height: 600px;
+    height: 400px;
     width: 100%; 
     position: absolute;
     
-    transform: scale(110%);
+   
     z-index: 0;
+    filter:blur(2px);
+    filter: brightness(50%)
 
     
     
 
+}
+.button-div{
+  
+   display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    
 }
 .botao_regiao{
-    border: none;
-    width: 100%;
+    position: relative;
+    width: 200px;
     height: 100px;
-    margin-bottom: -14px;
-    background-color: blue;
+    border-radius: 15px;
     color: white;
-    z-index: 2;
+    background-color: darkblue;
+   border: none;
+    z-index: 1;
+    transition: 0.5s;
+    overflow: hidden; /* Evita que o pseudo-elemento ultrapasse os limites do botão */
+    
 }
 .botao_regiao:hover{
-    width: 100%;
     background-color: darkblue;
-    color: white
+    overflow: hidden;
+}
+.botao_regiao::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: blue;
+    border-radius: 15px;
+    z-index: -1;
+    transform-origin: right ;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: scaleX(1);
+    
+  
+}
+.botao_regiao:hover::before{
+    transform-origin: right;
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+    overflow: hidden;
+   
+
 }
 
+.icon-button{
+    position: absolute;
+    z-index: 10;
+    align-self: center;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: transform 0.5s ease, opacity 0.6s ease;
+    pointer-events: none;
+    overflow: hidden;
+    
+}
+.text-region{
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    color: white;
+}
+
+.img-icon{
+    height: var(--altura);
+    filter: grayscale(1) brightness(100) saturate(500%);
+    pointer-events: none;
+    overflow: hidden;
+  
+}
+.aparecer{
+   
+    opacity: 1;
+    transform: translateX(0px);
+}
+.sumir{
+    transform: translateX(50px);
+    opacity: 0;
+}
+.sumir-icon{
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-40px);
+    opacity: 0;
+}
 .clicado{
-    background-color: darkblue;
+    transform: scale(110%);
 }
 #texto_botoes_assistencias{
- display: flex; 
+ display: flex;
+ justify-content: space-around; 
  z-index: 2;
+ padding: 50px;
+ 
+
 }
 #texto_botoes_assistencias p{
     width: 1000px;
@@ -200,16 +306,33 @@ body{
     border-radius: 0px;
     border: none;
     background-color: transparent;
-    margin-top: 100px;
+    height: 500px;
+    
+   
 }
 .card-corpo{
    display: flex;
    justify-content: center;
+  
    
+   
+}
+.card-completo{
+    display: flex;
+    
+
+}
+.card-all{
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px black;
+    border: 2px solid black;
+    background-color: rgb(209, 221, 226);
 }
 .card-map, .card-text{
     height: 400px;
     width: 400px;
+    
 }
 .card-map{
     display: flex;
@@ -218,22 +341,25 @@ body{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     z-index: 0;
-    background-color: darkblue;
+    
+    
+    
     
 }
 iframe{
     height: 90%;
     width: 90%;
     border-radius: 15px;
+    box-shadow:  2px 2px 5px black;
 }
 .card-text{
     display: flex;
     flex-direction: column;
-    align-items: start;
-    text-align: start;    
+    align-items: center;
+    text-align: center;    
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: rgba(255, 255, 255);
+   
 }
 .card-line{
     background: linear-gradient(95deg,darkblue,darkblue);
@@ -244,19 +370,45 @@ iframe{
     padding: 0px;
 }
 .card-title{
-    font-size: 1.5em;
+    font-size: 1.4em;
     padding-top: 20px;
     padding-left: 10px;
+    font-weight: 600;
 
 }
 .card-p{
-    font-size: 1.3em;
+    font-size: 1.2em;
     padding: 5px;   
     margin: 0px 0px;
 }
 .icone-card{
     color: darkblue;
     padding: 10px;
+    font-size: 20px;
+}
+.icone-card:before{
+    height: 20px;
+    width: 20px;
+}
+.fa-solid{
+    height: 40px;
+    width: 40px;
+}
+.card-imagens-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 20px;
+}
+.card-image{
+    height: 80%;
+    width: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 2px solid black;
 }
 
 /*COZE */
@@ -283,6 +435,7 @@ iframe{
     right: 30px;
     border-radius: 50%;
     filter:opacity(50%);
+
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .img-block:hover{
@@ -361,3 +514,4 @@ footer{
 .baixo-footer p{
     color:white;
 }
+

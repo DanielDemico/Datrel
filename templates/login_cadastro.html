@@ -46,14 +46,13 @@
   <!-- Fim Cabeçalho -->
 
   <section>
-    <div id='pagina_login'>
+    <div id="pagina_login">
         <h1>Pagina de Login </h1>
         <div>
             <form class="forms-login" type="submit" method="POST" action="{{url_for('logar')}}">
                 <input type="email" name="email" placeholder="E-mail">
                
             
-
                 <input type='password' name="senha" placeholder="Senha">
              
 
@@ -63,7 +62,7 @@
         </div> 
     </div>
     <div id="pagina_cadastro" class="some">
-        <h1>Pagina de cadastro </h2>
+        <h1>Pagina de cadastro </h1>
             <div>
                 <form class="forms-cadastrar" type="submit" method="POST" action="{{url_for('cadastrar')}}">
                   
@@ -84,9 +83,9 @@
                       <input type='password' name="confirmar_senha" placeholder="Confirmar Senha">
                     </div>
 
-                    
+                    <div style="width:100%;">
                       <input class="btn-cadastrar" type="submit" value="Cadastrar" name="cadastrar">
-                    
+                    </div>
                   </form>
             </div>
     </div>

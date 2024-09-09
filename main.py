@@ -1,4 +1,3 @@
-
 from dados import centro_oeste, sudeste, sul, nordeste, norte, unido
 from flask import Flask, render_template, request, redirect
 import json
@@ -13,6 +12,7 @@ logado = False
 def home():
     global logado
     count = 0
+    
     return render_template("index.html",
                            logado = logado,
                             centro_oeste = centro_oeste,
@@ -22,6 +22,7 @@ def home():
                             norte = norte,
                             unido = unido,
                             count = count,
+                            random = random,
                            )    
 
 @app.route('/entrar', methods = ["GET","POST"])
@@ -87,19 +88,15 @@ def cadastrar():
     return redirect("/")
 
 
-
-
-
-
-
-
-
-
-
 @app.route('/sair', methods = ["GET"])
 def sair():
     global logado
     logado = False
     return redirect("/")
-
+    
 app.run()
+#deixar 
+#Quando for deixar na nuvem
+
+# if __name__ == "__main__":
+#     app.run(debug=True)

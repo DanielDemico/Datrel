@@ -12,5 +12,19 @@
         "Email": "ddemico3@gmail.com",
         "CEP": "541560",
         "Senha": "123"
+    },
+    {
+        "Nome": "Daniel ",
+        "Telefone": "14981052534",
+        "Email": "Teste@gmail.com",
+        "CEP": "141",
+        "Senha": "123"
+    },
+    {
+        "Nome": "Daniel ",
+        "Telefone": "14981052534",
+        "Email": "Teste@gmail.com",
+        "CEP": "141",
+        "Senha": "1213"
     }
 ]
