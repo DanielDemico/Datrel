@@ -93,10 +93,12 @@ def sair():
     global logado
     logado = False
     return redirect("/")
-    
-app.run()
+
+
+
 #deixar 
 #Quando for deixar na nuvem
+if __name__ == "__main__":
+    app.run(debug=True)
 
-# if __name__ == "__main__":
 #     app.run(debug=True)
