@@ -552,24 +552,23 @@
     
         
           <div id="coze_div">
-            <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/oversea/index.js" ></script>
-            <script>
+            <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/0.1.0-beta.5/libs/oversea/index.js"></script>
+      <script>
+        const title = 'Diana';
+        const icon = '../static/imagens/diana.jpg';
+          new CozeWebSDK.WebChatClient({
+           
             
-             const layout = 'mobile'
-             const icon = "../static/imagens/datra_redondo.png";
-                new CozeWebSDK.WebChatClient({
-                  config: {
-                    bot_id: '7394943315126599686',
-                
-                    
-                  },
-                  componentProps: {
-                    title: 'Diana',
-                    icon,
-                  },
-               
-                });
-              </script>
+            config: {
+              bot_id: '7410861302660775941',
+              
+            },
+            componentProps: {
+              title,
+              icon,
+            },
+          });
+      </script>
           </div>
       
           <!-- Coze -->
